@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="621.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stevens.ej02.controllers.MainController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e293b" height="60.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" width="257.0" />
+      <Label layoutX="31.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Biblioteca" textAlignment="CENTER" textFill="WHITE" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="60.0" layoutX="142.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="119.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#84a3bc" height="60.0" layoutX="257.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="542.0" />
+      <TableView fx:id="tblLibros" layoutY="241.0" prefHeight="350.0" prefWidth="800.0" style="-fx-background-color: #F4F6F9;">
+        <columns>
+          <TableColumn fx:id="colTitulo" prefWidth="150.4000244140625" style="-fx-background-color: #FFFFFF;" text="Titulo" />
+          <TableColumn fx:id="colAutor" minWidth="8.800018310546875" prefWidth="135.20001220703125" style="-fx-background-color: #ffffff;" text="Autor" />
+            <TableColumn fx:id="colIbns" prefWidth="112.0" style="-fx-background-color: #ffffff;" text="ISBN" />
+            <TableColumn fx:id="colanio" prefWidth="112.79998779296875" style="-fx-background-color: #ffffff;" text="Año" />
+            <TableColumn fx:id="colPrestado" minWidth="0.0" prefWidth="127.20001220703125" style="-fx-background-color: #ffffff;" text="Prestado" />
+            <TableColumn fx:id="colFechaDev" prefWidth="169.5999755859375" style="-fx-background-color: #FFFFFF;" text="Fecha de devolucion" />
+        </columns>
+      </TableView>
+      <TextField fx:id="txtBuscar" layoutX="2.0" layoutY="191.0" prefHeight="40.0" prefWidth="157.0" promptText="buscar por autor o titulo" style="-fx-background-color: #475569;">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></TextField>
+      <Button layoutX="291.0" layoutY="21.0" mnemonicParsing="false" onAction="#btnNuevoLibro" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #1E293B;" text="+ nuevo" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="375.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnGuardar" prefHeight="26.0" prefWidth="66.0" style="-fx-background-color: #10B981;" text="Guardar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="450.0" layoutY="19.0" mnemonicParsing="false" onAction="#BtnElimianr" prefHeight="27.0" prefWidth="78.0" style="-fx-background-color: #EF4444;" text="Eliminar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="535.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnPrestar" prefHeight="26.0" prefWidth="100.0" style="-fx-background-color: #10B981;" text="Prestar" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button layoutX="647.0" layoutY="20.0" mnemonicParsing="false" onAction="#btnDetalles" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #475569;" text="Detalles (doble click)" textFill="#fffcfc">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtContador" editable="false" layoutY="593.0" prefHeight="27.0" prefWidth="106.0" style="-fx-background-color: #475569;" text=" 0 libros" />
+      <CheckBox fx:id="chkTodos" layoutX="2.0" layoutY="155.0" mnemonicParsing="false" onAction="#chkTodos" prefHeight="26.0" prefWidth="157.0" text="Marcar todos" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </CheckBox>
+      <Label fx:id="lblMensaje" layoutX="2.0" layoutY="65.0" prefHeight="30.0" prefWidth="796.0" text="" textFill="#1c143b">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

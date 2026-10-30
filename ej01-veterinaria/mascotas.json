@@ -1,0 +1,13 @@
+[
+  {
+    "nombre": "mia",
+    "especie": "calis filus",
+    "raza": "gata",
+    "fechaNac": "2019-02-12",
+    "duenio": {
+      "nombre": "stevens",
+      "telefono": "1234567",
+      "mail": "stevens@gmai.com"
+    }
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "titulo": "jhon wick",
+    "director": "dsjdh",
+    "genero": "dsjhds",
+    "anio": 2020,
+    "duracionMin": 167,
+    "vista": true
+  },
+  {
+    "titulo": "duro de matar",
+    "director": "tomas castillo",
+    "genero": "accion",
+    "anio": 2005,
+    "duracionMin": 145,
+    "vista": false
+  }
+]

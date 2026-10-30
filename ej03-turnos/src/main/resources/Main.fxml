@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="621.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stevens.ej03.controllers.MainController">
+   <children>
+      <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Ejercicio 3 — Turnos médicos" />
+   </children>
+</AnchorPane>
