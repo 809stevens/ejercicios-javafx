@@ -188,7 +188,6 @@ public class MainController {
 
     @FXML
     void btnNuevoDuenio(ActionEvent event) {
-        // TODO: Cambiar a la vista de Dueño
         App.app.setScene(Paths.DUENIO_VIEW);
     }
 
@@ -230,7 +229,7 @@ public class MainController {
 
             PauseTransition pausa = new PauseTransition(Duration.seconds(4));
 
-            // 3. Definir la acción que ocurrirá cuando pasen los 10 segundos
+
             pausa.setOnFinished(event -> {
                 lblMensaje.setText(""); // Borra el texto
                 lblMensaje.getStyleClass().removeAll("resultado-ok", "resultado-error"); // Quita los estilos si lo deseas

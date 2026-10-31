@@ -40,7 +40,6 @@ public class DuenioController {
         alert.setTitle("CONFIRMAR");
         alert.setContentText("Seguro que quieres cancelar el proceso");
         alert.showAndWait();
-        // TODO: Volver a la vista principal
         App.app.setScene(Paths.MASCOTA_VIEW);
     }
 
