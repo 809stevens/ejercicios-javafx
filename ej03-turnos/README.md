@@ -11,10 +11,10 @@ Proyecto Maven + JavaFX (FXML). **Sin persistencia:** los datos solo viven en me
 ## Estructura base
 
 - `pom.xml` → dependencias y configuración Maven
-- `src/main/resources/Main.fxml` → vista principal (empieza aquí)
+- `src/main/resources/stevens/ej03/Main.fxml` → vista principal (empieza aquí)
 - `stevens.ej03.controllers.MainController` → controlador de la vista principal
 - `stevens.ej03.model` → crea aquí tus entidades
-- `stevens.ej03.application` → punto de entrada (`Launcher` / `app`)
+- `stevens.ej03.application` → punto de entrada (`Launcher` / `App`)
 
 ## Estructura de datos: el gestor (en memoria)
 

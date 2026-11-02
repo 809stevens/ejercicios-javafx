@@ -2,6 +2,7 @@ module stevens.ej03 {
     requires javafx.controls;
     requires javafx.fxml;
     requires com.google.gson;
+    requires java.desktop;
 
     exports stevens.ej03.application to javafx.graphics;
     opens stevens.ej03.controllers to javafx.fxml;
