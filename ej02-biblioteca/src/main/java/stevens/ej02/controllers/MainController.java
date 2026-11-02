@@ -172,6 +172,7 @@ public class MainController {
 
     @FXML
     void btnGuardar(ActionEvent event) {
+
         mensaje("Cambios guardados automáticamente.", true);
     }
 

@@ -25,29 +25,9 @@ import java.util.List;
 
 public class GsonLibroDao implements LibroDao {
 
-    /**
-     * Gson no sabe serializar las propiedades de JavaFX: intenta acceder por reflexión a sus
-     * campos internos (bean, helper...) y falla porque el módulo javafx.base no está abierto.
-     * Con este adaptador la propiedad se guarda como un simple true/false.
-     */
-    private static final TypeAdapter<BooleanProperty> ADAPTADOR_BOOLEAN_PROPERTY = new TypeAdapter<>() {
-        @Override
-        public void write(JsonWriter salida, BooleanProperty valor) throws IOException {
-            salida.value(valor != null && valor.get());
-        }
-
-        @Override
-        public BooleanProperty read(JsonReader entrada) throws IOException {
-            return new SimpleBooleanProperty(entrada.nextBoolean());
-        }
-    };
-
     private final Path archivo;
     private final Type tipoLista;
-    private final Gson gson = new GsonBuilder()
-            .setPrettyPrinting()
-            .registerTypeHierarchyAdapter(BooleanProperty.class, ADAPTADOR_BOOLEAN_PROPERTY)
-            .create();
+    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     public GsonLibroDao(Path archivo, Class<Libro> clase) {
         this.archivo = archivo;
@@ -65,34 +45,20 @@ public class GsonLibroDao implements LibroDao {
                 return new ArrayList<>();
             }
             return new ArrayList<>(libros);
-        } catch (JsonParseException e) {
-            throw new PersistenciaException(
-                    "El archivo " + archivo.getFileName() + " está dañado o incompleto. "
-                            + "Corrígelo o bórralo para empezar de cero. Detalle: " + e.getMessage(), e);
-        } catch (IOException e) {
-            throw new PersistenciaException("No se pudo leer " + archivo.getFileName() + ": " + e.getMessage(), e);
+        } catch (IOException |JsonParseException e) {
+            throw new PersistenciaException("no se pudo leer "+archivo.getFileName()+": "+e.getMessage(),e);
         }
     }
 
     @Override
     public void guardar(List<Libro> libros) throws PersistenciaException {
-        Path destino = archivo.toAbsolutePath();
+        Path carpeta = archivo.toAbsolutePath().getParent();
         try {
-            Path carpeta = destino.getParent();
             if (carpeta != null) {
                 Files.createDirectories(carpeta);
             }
-            // Se escribe primero en un archivo temporal y luego se reemplaza, para que una
-            // interrupción a mitad de escritura no deje libros.json truncado.
-            Path temporal = destino.resolveSibling(destino.getFileName() + ".tmp");
-            try (Writer escritor = Files.newBufferedWriter(temporal, StandardCharsets.UTF_8)) {
+            try (Writer escritor = Files.newBufferedWriter(archivo, StandardCharsets.UTF_8)) {
                 gson.toJson(libros, tipoLista, escritor);
-            }
-            try {
-                Files.move(temporal, destino,
-                        StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.ATOMIC_MOVE);
-            } catch (AtomicMoveNotSupportedException e) {
-                Files.move(temporal, destino, StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (IOException | JsonParseException e) {
             throw new PersistenciaException("No se pudo guardar " + archivo.getFileName() + ": " + e.getMessage(), e);
