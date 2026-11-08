@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="604.0" prefWidth="1064.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stevens.ej06.controller.MainController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#162838" height="55.0" stroke="BLACK" strokeType="INSIDE" width="1066.0" />
+      <Label layoutX="30.0" layoutY="19.0" text="GESTION DE GASTO" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e7f4ff" height="491.0" layoutX="-1.0" layoutY="55.0" stroke="BLACK" strokeType="INSIDE" width="421.0" />
+      <ComboBox fx:id="cmbTipo" layoutX="18.0" layoutY="90.0" prefHeight="26.0" prefWidth="354.0" />
+      <Label layoutX="16.0" layoutY="72.0" text="Tipo" />
+      <Label layoutX="18.0" layoutY="125.0" text="Concepto" />
+      <TextField fx:id="txtConcepto" layoutX="18.0" layoutY="143.0" prefHeight="26.0" prefWidth="354.0" />
+      <Label layoutX="18.0" layoutY="178.0" text="Categoria" />
+      <TextField fx:id="txtCategoria" layoutX="18.0" layoutY="196.0" prefHeight="26.0" prefWidth="354.0" />
+      <Label layoutX="18.0" layoutY="232.0" text="Fecha" />
+      <DatePicker fx:id="txtFecha" layoutX="18.0" layoutY="250.0" prefHeight="26.0" prefWidth="354.0" />
+      <Label layoutX="24.0" layoutY="290.0" text="Monto base" />
+      <TextField fx:id="txtGasto" layoutX="18.0" layoutY="308.0" prefHeight="26.0" prefWidth="354.0" />
+      <Label layoutX="137.0" layoutY="345.0" text="Datos especifico" />
+      <Label fx:id="lblPeriodo" layoutX="17.0" layoutY="370.0" text="Periodo" />
+      <TextField fx:id="txtPeriodo" layoutX="14.0" layoutY="388.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label fx:id="lblMses" layoutX="202.0" layoutY="370.0" text="meses de contrato" />
+      <TextField fx:id="txtContrato" layoutX="202.0" layoutY="388.0" prefHeight="26.0" prefWidth="169.0" />
+      <Label fx:id="lblMedio" layoutX="17.0" layoutY="424.0" text="Medio de pago" />
+      <TextField fx:id="txtMedioPago" layoutX="14.0" layoutY="442.0" prefHeight="26.0" prefWidth="150.0" />
+      <Label fx:id="lblCuotas" layoutX="207.0" layoutY="424.0" text="Cuota" />
+      <TextField fx:id="txtCuota" layoutX="202.0" layoutY="442.0" prefHeight="26.0" prefWidth="170.0" />
+      <TableView fx:id="tblGastos" layoutX="420.0" layoutY="56.0" prefHeight="491.0" prefWidth="646.0">
+        <columns>
+          <TableColumn fx:id="colTipo" prefWidth="85.60003662109375" text="Tipo" />
+          <TableColumn fx:id="colConcepto" prefWidth="76.79998779296875" text="concepto" />
+            <TableColumn fx:id="colCategoria" prefWidth="83.20001220703125" text="Categoria" />
+            <TableColumn fx:id="colFecha" prefWidth="78.39996337890625" text="Fecha" />
+            <TableColumn fx:id="colMontoBase" prefWidth="75.199951171875" text="Monto base" />
+            <TableColumn fx:id="colDatosEspecifico" prefWidth="156.79998779296875" text="datos especifico" />
+            <TableColumn fx:id="colMontoFinal" prefWidth="91.99993896484375" text="Monto final" />
+        </columns>
+      </TableView>
+      <Button layoutX="12.0" layoutY="504.0" mnemonicParsing="false" onAction="#btnGuadar" text="Guardar" />
+      <Button layoutX="169.0" layoutY="504.0" mnemonicParsing="false" onAction="#btnCancelar" text="Cancelar" />
+      <Button layoutX="321.0" layoutY="504.0" mnemonicParsing="false" onAction="#btnEliminar" text="Eliminar" />
+      <Label fx:id="lblMensaje" layoutX="9.0" layoutY="549.0" prefHeight="48.0" prefWidth="409.0" />
+      <Label fx:id="lblGastoTotal" layoutX="910.0" layoutY="546.0" prefHeight="48.0" prefWidth="150.0" />
+      <Label layoutX="843.0" layoutY="561.0" text="gasto total" />
+   </children>
+</AnchorPane>

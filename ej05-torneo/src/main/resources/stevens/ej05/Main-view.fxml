@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="640.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="stevens.ej05.controllers.MainController">
+   <children>
+      <Label layoutX="20.0" layoutY="20.0" style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Ejercicio 5 - Torneo de videojuegos" />
+      <Label layoutX="20.0" layoutY="60.0" text="TODO: construye aquí el formulario, la tabla y el área de mensajes con Scene Builder." />
+   </children>
+</AnchorPane>
